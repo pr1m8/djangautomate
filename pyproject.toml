@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "djangautomate"
-version = "0.1.2"
+version = "0.1.3"
 description = "Automates Django app, model, serializer, and view generation from SQLAlchemy tables"
 authors = ["William R. Astley <william.astley@yourdomain.com>"]
 license = "MIT"
