@@ -2,8 +2,11 @@
 name = "djangautomate"
 version = "0.1.0"
 description = "Automates Django app, model, serializer, and view generation from SQLAlchemy tables"
-authors = ["0rac130fD31phi <william.astley@algebraicwealth.com>"]
+authors = ["William Astley <william.astley@algebraicwealth.com>"]
+license = "MIT"
 readme = "README.md"
+repository = "https://github.com/pr1m8/djangautomate"
+homepage = "https://djangautomate.readthedocs.io"
 packages = [{ include = "djangautomate" }]
 
 [tool.poetry.dependencies]
@@ -18,7 +21,6 @@ twine = "^6.1.0"
 [tool.poetry.group.dev.dependencies]
 sphinx = "^8.2.1"
 sphinx-rtd-theme = "^3.0.2"
-sphinx-autoapi = "^3.6.0"
 
 [build-system]
 requires = ["poetry-core"]
