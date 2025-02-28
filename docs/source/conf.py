@@ -5,7 +5,7 @@ import sys
 project = "DjangAutomate"
 copyright = "2025, pr1m8"
 author = "pr1m8"
-release = "0.1.0"  # Ensure this matches the package version
+release = "0.1.0"
 
 # -- Path Configuration ---------------------------------------------------
 sys.path.insert(0, os.path.abspath('../../'))  # Ensure the module is found
@@ -19,7 +19,7 @@ extensions = [
 
 # -- Autodoc Settings -----------------------------------------------------
 autodoc_mock_imports = ["sqlalchemy", "django"]
-autodoc_member_order = "bysource"  # Keep function order same as source code
+autodoc_member_order = "bysource"
 autodoc_default_options = {
     "members": True,
     "undoc-members": True,
@@ -37,9 +37,10 @@ source_suffix = ['.rst']
 master_doc = 'index'  # Ensure index.rst is the main file
 
 # -- HTML Output Settings -------------------------------------------------
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['./_static']
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'  # Ensure the theme is loaded correctly
+html_static_path = ['_static']
 
 # -- Templates Path -------------------------------------------------------
-templates_path = ['./_templates']
+templates_path = ['_templates']
 exclude_patterns = []
