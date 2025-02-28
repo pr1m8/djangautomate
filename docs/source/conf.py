@@ -14,14 +14,31 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))  # Adjust for the correct path
 
+#sys.path.insert(0, os.path.abspath('../../djangautomate'))  # Adjust for the correct path
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('../../'))  # Ensure the module can be found
 
 extensions = [
-    'sphinx.ext.autodoc',       # Auto-generate documentation from docstrings
-    'sphinx.ext.napoleon',      # Google-style docstrings
-    'sphinx.ext.viewcode',      # Link to source code
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'autoapi.extension',  # Enables automatic API documentation
 ]
+
+# Specify where AutoAPI should look for the module
+autoapi_dirs = ['../../djangautomate']  # Adjust if needed
+
+# Use Google-style docstrings
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+
+source_suffix = ['.rst']  # Keep only reStructuredText
+
+
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']

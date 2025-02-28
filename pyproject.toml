@@ -12,6 +12,13 @@ django = "^4.2"              # Django framework
 sqlalchemy = "^2.0"          # ORM for database interactions
 pandas = "^2.2.0"            # Data manipulation and analysis
 numpy = "^1.26.0"            # Numerical computing
+build = "^1.2.2.post1"
+twine = "^6.1.0"
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^8.2.1"
+sphinx-rtd-theme = "^3.0.2"
+sphinx-autoapi = "^3.6.0"
 
 [build-system]
 requires = ["poetry-core"]
