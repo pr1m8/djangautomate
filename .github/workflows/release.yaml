@@ -1,0 +1,55 @@
+name: Auto Version & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: pip install poetry
+
+      - name: Configure Git User
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Bump Version & Commit
+        run: |
+          poetry version patch
+          VERSION=$(poetry version -s)
+          git add pyproject.toml
+          git commit -m "Bump version to $VERSION"
+          git tag "v$VERSION"
+          git push origin main --tags
+
+      - name: Build Package
+        run: poetry build
+
+      - name: Publish to PyPI
+        env:
+          POETRY_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: poetry publish --build --username __token__ --password $POETRY_PYPI_TOKEN
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.ref_name }}
+          name: Release v${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: |
+            dist/*.tar.gz
+            dist/*.whl
