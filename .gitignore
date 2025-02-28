@@ -1,0 +1,58 @@
+# --- General Python ---
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+*.swp
+*.swo
+*~
+*.bak
+
+# --- Virtual Environments ---
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+
+# --- Poetry and Pip ---
+poetry.lock
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Build and Distribution ---
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+*.wheel
+site-packages/
+
+# --- Logs and Debugging ---
+*.log
+*.out
+*.err
+debug.log
+coverage.xml
+nosetests.xml
+pytest_cache/
+
+# --- Django ---
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static/
+*.log
+local_settings.py
+.env
+.envrc
+secrets.json
+*.pyc
+
+# --- Sphinx Documentation ---
+docs/_build/

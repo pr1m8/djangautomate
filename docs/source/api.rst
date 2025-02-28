@@ -1,11 +1,14 @@
 DjangAutomate API Reference
-=============
+===========================
 
 .. toctree::
    :maxdepth: 2
 
 .. autoapi:: djangautomate
-   :no-undoc-members:
-   :no-private-members:
-   :no-special-members:
+   :members:
+   :undoc-members:
+   :private-members:
+   :special-members:
    :show-inheritance:
+   :show-module-summary:
+   :imported-members:

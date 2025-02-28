@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('../../'))  # Adjust for the correct path
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('../../'))  # Ensure the module can be found
+sys.path.insert(0, os.path.abspath('../../'))  # Ensure the module is found
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -29,15 +29,26 @@ extensions = [
     'autoapi.extension',  # Enables automatic API documentation
 ]
 
-# Specify where AutoAPI should look for the module
-autoapi_dirs = ['../../djangautomate']  # Adjust if needed
+# Point AutoAPI to the correct module directory
+autoapi_dirs = ['../../djangautomate']
+
+# Ensure docstrings are properly extracted
+autoapi_options = [
+    'members',
+    'undoc-members',
+    'private-members',
+    'special-members',
+    'show-inheritance',
+    'show-module-summary',
+    'imported-members',
+]
 
 # Use Google-style docstrings
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 
-source_suffix = ['.rst']  # Keep only reStructuredText
-
+# Ensure Sphinx knows to treat .rst files properly
+source_suffix = ['.rst']
 
 
 html_theme = 'sphinx_rtd_theme'
