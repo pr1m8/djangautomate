@@ -2,12 +2,13 @@
 name = "djangautomate"
 version = "0.1.0"
 description = "Automates Django app, model, serializer, and view generation from SQLAlchemy tables"
-authors = ["William Astley <william.astley@algebraicwealth.com>"]
+authors = ["William R. Astley <william.astley@yourdomain.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/pr1m8/djangautomate"
 homepage = "https://djangautomate.readthedocs.io"
 packages = [{ include = "djangautomate" }]
+
 
 [tool.poetry.dependencies]
 python = "^3.12"

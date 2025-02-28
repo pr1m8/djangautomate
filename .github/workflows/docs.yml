@@ -18,11 +18,13 @@ jobs:
           python-version: 3.12
 
       - name: Install dependencies
-        run: pip install sphinx sphinx-rtd-theme
+        run: |
+          pip install sphinx sphinx-rtd-theme
 
       - name: Build Documentation
         run: |
           cd docs
+          make clean
           make html
 
       - name: Upload Documentation Artifact

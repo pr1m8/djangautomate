@@ -10,7 +10,6 @@ DjangAutomate Documentation
    contributing
    djangautomate
 
-
 Overview
 --------
 **DjangAutomate** automates the creation of Django apps, models, serializers, and views directly from SQLAlchemy database tables.
@@ -36,3 +35,5 @@ Or using Poetry:
 .. code-block:: bash
 
    poetry add djangautomate
+
+Note: The main documentation is in the `DjangAutomate` section.
